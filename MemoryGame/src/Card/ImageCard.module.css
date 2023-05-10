@@ -1,0 +1,41 @@
+.container {
+  height: 10rem;
+  width: 10rem;
+  background-color: rgb(30, 243, 243);
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(0, 0, 0);
+  overflow: hidden;
+  box-shadow: 0 0 10px 8px rgba(92, 96, 96, 0.481);
+  transition: all 0.2s ease-in-out;
+}
+
+.iconImage {
+  height: 100%;
+  width: 100%;
+}
+
+.container_show {
+  animation: showImage 0.2s ease-in-out forwards;
+}
+.container_hide {
+  animation: hideImage 0.2s ease-in-out backwards;
+}
+
+@keyframes showImage {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+@keyframes hideImage {
+  0% {
+    transform: rotateY(-180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
