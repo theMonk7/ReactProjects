@@ -1,10 +1,10 @@
 import "./App.css";
-import ImageCard from "./Card/ImageCard";
+import GameGrid from "./GameGrid/GameGrid";
 
 function App() {
   return (
     <>
-      <ImageCard />
+      <GameGrid />
     </>
   );
 }
