@@ -12,6 +12,8 @@
   overflow-x: hidden;
   margin: 1rem auto;
   aspect-ratio: 1;
+  background-color: rgb(255, 161, 127);
+  border-radius: 10px;
 }
 @media (min-width: 50px) {
   .gridContainer {

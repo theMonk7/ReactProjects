@@ -8,7 +8,19 @@
   border-color: rgb(0, 0, 0);
   overflow: hidden;
   box-shadow: 0 0 10px 8px rgba(92, 96, 96, 0.481);
+  transform-style: preserve-3d;
   transition: all 0.2s ease-in-out;
+  /* animation: hideCardInitially 2s ease-in-out; */
+}
+
+@keyframes hideCardInitially {
+  0%,
+  70% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
 }
 
 .iconImage {
@@ -16,10 +28,10 @@
   width: 100%;
 }
 
-.container_show {
-  animation: showImage 0.2s ease-in-out forwards;
+.correct {
+  animation: showImage 1s ease-in-out forwards;
 }
-.container_hide {
+.hidden {
   animation: hideImage 0.2s ease-in-out backwards;
 }
 

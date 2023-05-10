@@ -2,21 +2,20 @@ import styles from "./ImageCard.module.css";
 import { useState } from "react";
 import { waterImage } from "../Assets/ImageAssets";
 const ImageCard = (props) => {
-  const { image, key } = props;
-  const [showImage, setShowImage] = useState(false);
+  const { image, uniqueId, onCardClick, state } = props;
   const flipImage = () => {
-    setShowImage((prev) => !prev);
+    onCardClick(uniqueId);
   };
 
   const containerStyles = `${styles.container} ${
-    showImage ? styles.container_show : styles.container_hide
+    state === "correct" ? styles.correct : styles.hidden
   }`;
 
   return (
     <>
-      <div className={containerStyles} onClick={flipImage} key={key}>
+      <div className={containerStyles} onClick={flipImage}>
         <img
-          src={showImage ? image : waterImage}
+          src={state === "correct" ? image : waterImage}
           alt="Icon of a famous person"
           className={styles.iconImage}
         />
