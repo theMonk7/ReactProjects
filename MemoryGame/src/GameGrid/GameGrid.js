@@ -36,25 +36,28 @@ const GameGrid = (props) => {
     } else {
       if (imageCards[prevSelected].tag === imageCards[data].tag) {
         setPrevSelected(-1);
-        setCorrectMatchCount((data) => {
-          return data + 1;
+        setCorrectMatchCount((k) => {
+          return k + 1;
         });
         console.log("utkarsh 2");
         console.log(correctMatchCount);
       } else {
-        setTimeout(() => {
-          updateCardState(prevSelected, CARD_STATE.HIDDEN);
-          updateCardState(data, CARD_STATE.HIDDEN);
-          setPrevSelected(-1);
-          console.log("utkarsh 3");
-        }, 1000);
+        updateCardState(prevSelected, CARD_STATE.HIDDEN);
+        updateCardState(data, CARD_STATE.HIDDEN);
+        setPrevSelected(-1);
+        // setTimeout(() => {
+        //   updateCardState(prevSelected, CARD_STATE.HIDDEN);
+        //   updateCardState(data, CARD_STATE.HIDDEN);
+        //   setPrevSelected(-1);
+        //   console.log("utkarsh 3");
+        // }, 1000);
       }
     }
   };
 
   const updateCardState = (index, val) => {
     setImageCards((cards) => {
-      return cards.map((value, idx, arr) => {
+      return cards.map((value, idx, _) => {
         return idx === index
           ? {
               ...value,

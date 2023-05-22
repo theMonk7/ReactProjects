@@ -29,10 +29,12 @@
 }
 
 .correct {
-  animation: showImage 1s ease-in-out forwards;
+  animation: showImage 0.2s ease-in-out forwards;
+  backface-visibility: visible;
 }
 .hidden {
   animation: hideImage 0.2s ease-in-out backwards;
+  backface-visibility: visible;
 }
 
 @keyframes showImage {
